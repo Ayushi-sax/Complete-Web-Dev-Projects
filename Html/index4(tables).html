@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        table,tr,td{
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <!-- Using Colgroup Property -->
+                <col span="2" style="background-color:red">
+            </colgroup>
+        <tr>
+            <td rowspan="3">Day</td>
+            <td colspan="3">Seminar</td>
+            
+        </tr>
+        <tr>
+           
+            <td colspan="2">Schedule</td>
+            <td rowspan="2">Topic</td>
+
+        </tr>
+        <tr>
+            
+            <td>Begin</td>
+            <td>End</td>
+            
+        </tr>
+        <tr>
+            <td rowspan="2">Monday</td>
+            <td rowspan="2">8 am</td>
+            <td rowspan="2">5 pm</td>
+            <td>Introduction to XML</td>
+
+        </tr>
+        <tr>
+            <td>Validity DTD and Relax NG</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Tuesday</td>
+            <td>8 am</td>
+            <td>11 am</td>
+            <td>XPaths</td>
+        </tr>
+        <tr>
+            <!-- <td></td> -->
+            <td>11 am</td>
+            <td>2 pm</td>
+            <td rowspan="2">XSL Transformations</td>
+        </tr>
+        <tr>
+            <!-- <td></td> -->
+            <td>2 pm</td>
+            <td>5 pm</td>
+            <!-- <td></td> -->
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>8 am</td>
+            <td>12 pm</td>
+            <td>XSL Formatting Objects</td>
+        </tr>
+    </table>
+
+    <table>
+        <!-- Using thead tbody and tfoot also known as rowgroup -->
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>123 Main St</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>25</td>
+                <td>456 Maple Ave</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">End of Table</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
