@@ -126,7 +126,7 @@ var arr2 = [4,5,6];
     });
     console.log(array2);
 
-//9.Testing an array using every and sum
+//9.Testing an array using every and some
     //Using every will give a boolean true/false if all values in an array meets the condition
     let allPositive = array1.every(value=> value >= 0);
     console.log(allPositive);
@@ -166,3 +166,101 @@ var arr2 = [4,5,6];
      let no1 = [1,2,3,5,-1];
      let sum = no1.reduce((accumulator,currentValue) => accumulator+currentValue ,0);
      console.log(sum);
+
+//Practice 1
+function arrayFromRange(min,max){
+    const emptyArr = [];
+    for(let i=min;i<=max;i++){
+      emptyArr.push(i);
+     
+    }
+    return emptyArr;
+}
+const numbers = arrayFromRange(1,8);
+console.log(numbers);
+
+//Practice 2
+
+function includes(arrayElements, searchElement){
+   for(values of arrayElements){
+    if(values === searchElement){
+        return true;
+    }
+    else return false;
+   }
+}
+console.log(includes([1,2,3,4,5,6], 9));
+
+//Practice 3
+
+function excludes(arra1 , arra2){
+    const result = arra1.filter(value => !arra2.includes(value));
+    return console.log(result); // Log the filtered array
+}
+excludes([1,2,3,4],[1,2]);
+
+//Practice 4
+
+function move(arr1 , index , offset){
+    // if(arr1.index === index)
+    let position = index+offset;
+    if(position>=arr1.length || position<0){
+        return console.log("invalid");
+        
+    }
+       let val = arr1.splice(index,1)[0];
+        arr1.splice(position,0,val);
+        return console.log(arr1);
+       
+    
+    
+}
+move([1,2,3,4] , 1 ,9);
+
+//Practice 5
+function searchOccurrence(array1,searchNum){
+    let count = 0;
+    for(let val of array1){
+        if (val == searchNum)
+            count++  
+    }
+    return count;
+}
+console.log(searchOccurrence([1,2,,3,4,1,1,1,1],1));
+
+//Practice 6
+let array = [2,4,3,1,6]
+console.log(array.reduce((a,b)=> {
+    if(a>b){
+        return a;
+    }
+    return b;
+}));
+
+//Practice 7
+let movies =[{title : 'a',year :2018 ,rating :2.0},
+    {title : 'b',year :2018 ,rating :3.9},
+    {title : 'c',year :2018 ,rating :4},
+    {title : 'd',year :2018 ,rating :4.2},
+    {title : 'e',year :2017 ,rating :4.8}
+
+]
+
+function filtering(arr){
+    return arr.filter(value => value.year == 2018 && value.rating>=4)
+    .sort(function(a,b){
+        if(a.rating<b.rating)
+            return -1;
+        else if(a.rating>b.rating)
+            return 1;
+        else return 0;
+    })
+    .reverse()
+    .map(val => "title " +val.title)
+
+}
+console.log(filtering(movies));
+
+   
+
+
